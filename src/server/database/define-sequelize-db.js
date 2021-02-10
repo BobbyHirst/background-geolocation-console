@@ -4,6 +4,9 @@ import {
   isPostgres, pgConnectionString, firebaseURL,
 } from '../config';
 
+var pg = require('pg');
+pg.defaults.ssl = true;
+
 export default !firebaseURL || isPostgres
   ? new Sequelize(
     isPostgres
