@@ -12,5 +12,8 @@ export default !firebaseURL || isPostgres
         dialect: 'sqlite',
         storage: path.resolve(__dirname, 'db', 'background-geolocation.db'),
       },
+      isPostgres ? {dialectOptions: {
+        ssl: true
+      } : {}},
   )
   : null;
