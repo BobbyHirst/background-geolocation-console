@@ -8,19 +8,11 @@ var pg = require('pg');
 pg.defaults.ssl = true;
 
 export default !firebaseURL || isPostgres
-  ? new Sequelize(
-    isPostgres
-      ? pgConnectionString
-      : {
-        dialect: 'sqlite',
-        storage: path.resolve(__dirname, 'db', 'background-geolocation.db'),
-      },
-      isPostgres ? 
-      {
-        dialect: 'postgres',
-        protocol: 'postgres',
-        dialectOptions: {
-          ssl: true
-      } : null },
-  )
+  ? 
+  new Sequelize(pgConnectionString, {
+    dialect: 'postgres',
+    dialectOptions: {
+      ssl: true
+    }
+  })
   : null;
