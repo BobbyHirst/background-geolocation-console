@@ -12,9 +12,7 @@ export default !firebaseURL || isPostgres
   new Sequelize(pgConnectionString, {
     dialect: 'postgres',
     dialectOptions: {
-      ssl: {
-          rejectUnauthorized: false
-      }
+      ssl: true
     }
   })
   : null;
