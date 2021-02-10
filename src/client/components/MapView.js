@@ -640,17 +640,17 @@ class MapView extends Component<Props, MapState> {
     }
 
     return (
-//       <GoogleMap
-//         yesIWantToUseGoogleMapApiInternals
-//         bootstrapURLKeys={{
-//           key: API_KEY,
-//           libraries: 'geometry',
-//         }}
-//         className='map'
-//         center={center}
-//         zoom={15}
-//         onGoogleApiLoaded={this.onMapLoaded}
-//       />
+      <GoogleMap
+        yesIWantToUseGoogleMapApiInternals
+        bootstrapURLKeys={{
+          key: API_KEY,
+          libraries: 'geometry',
+        }}
+        className='map'
+        center={center}
+        zoom={15}
+        onGoogleApiLoaded={this.onMapLoaded}
+      />
     );
   }
 }
